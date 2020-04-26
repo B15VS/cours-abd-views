@@ -12,15 +12,15 @@ $email = $connection->escape_string($_POST["email"]);
 $motdepasse = $connection->escape_string($_POST["motdepasse"]);
 
 $requete = "Select email, motdepasse "
-        . "from ChefDepartement "
+        . "from Etudiant "
         . "Where email = '$email' and "
         . "motdepasse = '$motdepasse'";
 
 $resultat = $connection->query($requete);
 
 if($resultat->num_rows == 1){
-    header("Location:espace_chef_dep.html");
+    header("Location:espace_etudiant.html");
 }else{
-    header("Location:login_chef_dep.html");
+    header("Location:login_etudiant.html");
 }
 
